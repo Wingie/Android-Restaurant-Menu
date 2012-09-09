@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">TestTab</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="text_hoes_here_lol">Text hoes here lol</string>
+
+</resources>
