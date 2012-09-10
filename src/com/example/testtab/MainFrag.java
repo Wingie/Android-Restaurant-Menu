@@ -34,7 +34,25 @@ public class MainFrag extends Fragment  {
 	Button button_add;
 	ImageView imview;
 	TextView tv,tv_descrip;
-	static DetailFrag det_frag = new DetailFrag();
+	//DetailFrag det_frag = new DetailFrag();
+	
+	callListener mCallback;
+    
+	 // Container Activity must implement this interface
+	    public interface callListener {
+	        public void onButtonClick(BaseItem abc);
+	    }
+	    
+	    @Override
+	    public void onAttach(Activity activity) {
+	        super.onAttach(activity);
+	        try {
+	            mCallback = (callListener) activity;
+	        } catch (ClassCastException e) {
+	            throw new ClassCastException(activity.toString()
+	                    + " must implement OnHeadlineSelectedListener");
+	        }
+	    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -55,13 +73,13 @@ public class MainFrag extends Fragment  {
         	 */
             @Override
             public void onClick(View v) {
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                   /* FragmentManager fm = getActivity().getSupportFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
                     ft.replace(R.id.right_frag_container, det_frag);
-                    if(item!=null)
-                    	det_frag.sendmsg(item);
                     ft.addToBackStack(null);
-                    ft.commit(); 
+                    ft.commit(); */
+            	if(item!=null)
+            		mCallback.onButtonClick(item);
                     
             }
             

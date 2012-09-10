@@ -10,10 +10,4 @@ public class BaseItem {
 		title = t;
 		description = d;
 	}
-	public void set(BaseItem b) {
-		// TODO Auto-generated constructor stub
-		image = b.image;
-		title = b.title;
-		description = b.description;
-	}
 }

@@ -1,9 +1,9 @@
 package com.example.testtab;
 
-import android.content.res.XmlResourceParser;
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,25 +17,26 @@ import android.widget.CheckBox;
 public class DetailFrag extends Fragment {
 	public Button button_back;
 	public CheckBox cb;
-	public BaseItem b;
+	ArrayList<BaseItem> myitemlist;
 	public int n=0;
-	public String str;
-	public void sendmsg(BaseItem b)
+	public String strng="default";
+	
+	DetailFrag(ArrayList<BaseItem> s)
 	{
-		if(b!=null)
-		{
-			n++;
-			Log.d("XXX",b.image);
-		}
+		myitemlist=s;
 	}
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {	
         View view = inflater.inflate(R.layout.detail, container, false);
         button_back =(Button) view.findViewById(R.id.button1);
         cb = (CheckBox)view.findViewById(R.id.checkBox1);
+     
+     //   cb.setText(myitemlist.get(0).title);
+        for(int i=0;i<myitemlist.size();i++)
+        	Log.d("XXX",Integer.toString(i)+myitemlist.get(i).title);
         
-  
-        Log.d("XXX","**"+Integer.toString(n)+" "+str);
+      //  Log.d("XXX","*/*"+str);fd
+        
         button_back.setOnClickListener(new OnClickListener() {
         
             @Override

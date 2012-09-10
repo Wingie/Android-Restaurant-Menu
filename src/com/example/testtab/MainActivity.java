@@ -1,13 +1,15 @@
 package com.example.testtab;
 
+import java.util.ArrayList;
+
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Window;
-import android.widget.Toast;
 
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
@@ -18,14 +20,18 @@ import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
  * @author WINDAdmin
  *
  */
-public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener {
-
+public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener,MainFrag.callListener {
+	FragmentManager fm;
+	Fragment fragment;
+	ArrayList<BaseItem> myitemlist = new ArrayList<BaseItem>();
+	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setRequestedOrientation(0);
         setContentView(R.layout.main_activity);
+        
         
         // this gets the swiping menu fragment set up and running
         mAdapter = new TestTitleFragmentAdapter(getSupportFragmentManager());
@@ -38,8 +44,8 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
         
         
         // this sets up the right bar fragment and connects MainFrag to it.
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.right_frag_container); 
+        fm = getSupportFragmentManager();
+        fragment = fm.findFragmentById(R.id.right_frag_container); 
         
         if (fragment == null) {
 
@@ -70,24 +76,29 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
     static DetailFrag d;
 	@Override
 	public void onItemClick(XmlResourceParser xmlItem) {
-		// TODO Auto-generated method stub
-		//xmlItem.getAttributeValue(null,"title");
-		//Toast.makeText(MainActivity.this  ,xmlItem.getAttributeValue(null,"title"), Toast.LENGTH_LONG).show();
-		
 		FragmentManager fm = getSupportFragmentManager();
-		//Log.d("XXX",Integer.toString(fm.getBackStackEntryCount()));
-	//	Log.d("XXX",fm.findFragmentById(R.id.right_frag_container).toString());
-		
 		if(fm.getBackStackEntryCount()==0){
 	        f = (MainFrag)fm.findFragmentById(R.id.right_frag_container);
 		}
 		else{
 			fm.popBackStack();
 			fm.executePendingTransactions();
-			//Log.d("XXX",fm.findFragmentById(R.id.right_frag_container).toString());
 		}  
 		
 		f.update(xmlItem);
+	}
+	
+	
+	@Override
+	public void onButtonClick(BaseItem item) {
+		// TODO Auto-generated method stub
+		myitemlist.add(item);
+		
+	//	Log.d("XXX",item.title);
+		FragmentTransaction ft = fm.beginTransaction();
+		ft.replace(R.id.right_frag_container, new DetailFrag(myitemlist));
+		ft.addToBackStack(null);
+		ft.commit();
 	}
 	
 	
