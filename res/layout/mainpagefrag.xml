@@ -33,12 +33,29 @@
         android:textSize="30dp"
         android:textColor="@android:color/white"
        />
+
 </FrameLayout>
+
+
 <Button
-        android:id="@+id/fragment_button2"
+        android:id="@+id/fragment_button3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"  
-        android:text="dsfdfgdfd"
+        android:layout_gravity="bottom" 
+        android:textSize="18dp"
+        android:text="@string/add_to_my_menu_"
+       
+        
+       />
+
+
+<TextView
+        android:id="@+id/description"
+        android:text="fdsfdsffdsffdsfdsffdsffdsfdsffdsfdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsf"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20dp"
+
        />
 </LinearLayout>

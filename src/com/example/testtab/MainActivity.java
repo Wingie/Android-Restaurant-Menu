@@ -45,7 +45,7 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
             FragmentTransaction ft = fm.beginTransaction();
             ft.add(R.id.right_frag_container, new MainFrag());
             ft.commit(); 
-                         
+                               
         }
         
             

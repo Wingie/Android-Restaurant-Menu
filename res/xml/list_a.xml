@@ -3,7 +3,7 @@
     <item 
 	    id="0"
 	    title="Android Launch!" 
-	    description="" 
+	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
 	    price="34"
 	    pic="test.jpg"/>
     <item 
@@ -11,7 +11,7 @@
 	    title=" adb is running normally." 
 	    description="" 
 	    price="34"
-	    pic="koala.jpg"/>
+	    pic="koala.png"/>
     <item 
 	    id="2"
 	    title="Performing com.example.testtab." 
@@ -23,7 +23,7 @@
 	    title="Automatic Target Mo" 
 	    description="" 
 	    price="34"
-	    pic="koala.jpg"/>
+	    pic="koala.png"/>
     <item 
 	    id="4"
 	    title=" Starting activity co" 
@@ -35,7 +35,7 @@
 	    title="464119d5c30173be" 
 	    description="" 
 	    price="34"
-	    pic="koala.jpg"/>
+	    pic="koala.png"/>
     <item 
 	    id="6"
 	    title="[android.intent.category.LAUNCHER]" 
@@ -53,7 +53,7 @@
 	    title=" adb is running normally." 
 	    description="" 
 	    price="34"
-	    pic="koala.jpg"/>
+	    pic="koala.png"/>
     <item 
 	    id="9"
 	    title="Performing com.example.testtab." 
@@ -65,7 +65,7 @@
 	    title="Automatic Target Mo" 
 	    description="" 
 	    price="34"
-	    pic="koala.jpg"/>
+	    pic="koala.png"/>
     <item 
 	    id="11"
 	    title=" Starting activity co" 
@@ -77,7 +77,7 @@
 	    title="464119d5c30173be" 
 	    description="" 
 	    price="34"
-	    pic="koala.jpg"/>
+	    pic="koala.png"/>
     <item 
 	    id="13"
 	    title="[android.intent.category.LAUNCHER]" 
