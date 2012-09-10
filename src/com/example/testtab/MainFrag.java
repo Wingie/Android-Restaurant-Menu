@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -51,10 +52,11 @@ public class MainFrag extends Fragment {
     public void update(XmlResourceParser xmlItem)
     {
     	//Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
-    	
+    	//imview.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fadeout));
     	String s = xmlItem.getAttributeValue(null,"pic");
     	loadDataFromAsset(s);
     	//button.setText(s);
+    	imview.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fadein));
     }
     
     public void loadDataFromAsset(String s) {

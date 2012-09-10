@@ -36,6 +36,11 @@
         android:layout_weight="1"
         />
 </LinearLayout>
+	<View 
+	    android:layout_width="10dp"
+        android:layout_height="fill_parent"
+        android:background="@android:color/black"
+	    />
 <FrameLayout
     android:id="@+id/right_frag_container"
 
