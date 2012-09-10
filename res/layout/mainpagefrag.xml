@@ -2,18 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<FrameLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" 
     >
   <ImageView 
    android:id="@+id/test_image"
    android:src="@drawable/koala"
+   android:contentDescription="@string/menu_display_image"
    android:layout_width="fill_parent"
-   android:layout_height="wrap_content"
-   />  
-<Button
-        android:id="@+id/fragment_button"
+   android:layout_height="wrap_content">
+   </ImageView>  
+   <View
+       android:layout_width="fill_parent"
+       android:layout_height="60dp"
+       android:layout_gravity="top" 
+       android:background="#AA000000"
+       ></View>
+<TextView
+        android:id="@+id/title"
         android:text="@string/text_hoes_here_lol"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+
+        android:layout_gravity="top|right" 
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
+       />
+</FrameLayout>
+<Button
+        android:id="@+id/fragment_button2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"  
+        android:text="dsfdfgdfd"
        />
 </LinearLayout>

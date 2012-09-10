@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -27,13 +28,15 @@ import android.widget.Toast;
 public class MainFrag extends Fragment {
 	Button button;
 	ImageView imview;
+	TextView tv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.mainpagefrag, container, false);
 
-        button = (Button) view.findViewById(R.id.fragment_button);
+        button = (Button) view.findViewById(R.id.fragment_button2);
         imview = (ImageView) view.findViewById(R.id.test_image);
+        tv = (TextView) view.findViewById(R.id.title);
         button.setOnClickListener(new OnClickListener() {
         
             @Override
@@ -54,9 +57,12 @@ public class MainFrag extends Fragment {
     	//Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     	//imview.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fadeout));
     	String s = xmlItem.getAttributeValue(null,"pic");
+    	String t = xmlItem.getAttributeValue(null,"title");
     	loadDataFromAsset(s);
+    	tv.setText(t);
     	//button.setText(s);
     	imview.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fadein));
+    	tv.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.slide_left));
     }
     
     public void loadDataFromAsset(String s) {
