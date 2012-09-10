@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
+
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -30,7 +30,7 @@ public final class TestFragment extends Fragment {
 
  // Container Activity must implement this interface
     public interface fragListener {
-        public void onItemClick(CharSequence str);
+        public void onItemClick(XmlResourceParser abc);
     }
     
     @Override
@@ -54,7 +54,7 @@ public final class TestFragment extends Fragment {
 
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < 10; i++) {
-            builder.append(content).append(i);
+            builder.append(content);
         }
         builder.deleteCharAt(builder.length() - 1);
         fragment.mContent = builder.toString();
@@ -64,7 +64,7 @@ public final class TestFragment extends Fragment {
 
     private String mContent = "???";
     private int xml_select=0;
-    public int[] XML = {R.xml.list_a,R.xml.list_b,R.xml.list_a,R.xml.list_b};
+    
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,8 +86,8 @@ public final class TestFragment extends Fragment {
     	ArrayList<String> listPrice;
     	
     	
-    	listTitle = PrepareListFromXml("title",XML[xml_select]);
-    	listPrice = PrepareListFromXml("price",XML[xml_select]);  	
+    	listTitle = PrepareListFromXml("title",xml_select);
+    	listPrice = PrepareListFromXml("price",xml_select);  	
     	
     	lv_arr_tit = (String[]) listTitle.toArray(new String[0]);
     	lv_arr_pric = (String[]) listPrice.toArray(new String[0]);
@@ -105,15 +105,15 @@ public final class TestFragment extends Fragment {
     	    items.add( map );
     	}
     	SimpleAdapter adapter = new SimpleAdapter( getActivity(), items,android.R.layout.simple_list_item_2, from, to );
-
+    	
     	v.setAdapter( adapter );
-    	      
+    	     
         v.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                     int position, long id) {
-                  
+            	XmlResourceParser abc = findXML(position,xml_select);
                // Send the event to the host activity
-                  mCallback.onItemClick(((TextView) view.findViewById(android.R.id.text1)).getText());
+                  mCallback.onItemClick(abc);
                 }
               });
         
@@ -126,8 +126,41 @@ public final class TestFragment extends Fragment {
         super.onSaveInstanceState(outState);
         outState.putString(KEY_CONTENT, mContent);
     }
-    
-    public ArrayList<String> PrepareListFromXml(String val, int xml) {
+    //    /.getAttributeValue(null,"id"); XmlResourceParser
+    public XmlResourceParser findXML(int val, int xml) {
+		XmlResourceParser itemname = null;
+		
+		XmlResourceParser todolistXml = getResources().getXml(xml);
+		int eventType = -1;
+		while (eventType != XmlResourceParser.END_DOCUMENT) {
+			if (eventType == XmlResourceParser.START_TAG) {
+				String strNode = todolistXml.getName();
+				if (strNode.equals("item")) {
+					itemname = todolistXml;;
+					if(Integer.parseInt(itemname.getAttributeValue(null,"id"))==val){
+						//Toast.makeText(getActivity(),Integer.toString(val), Toast.LENGTH_LONG).show();
+						//Log.d("com.example.testtab",todolistXml.getAttributeValue(null, "id"));
+						return itemname;
+					}
+				}
+			
+			}
+			try {
+				eventType = todolistXml.next();
+			} catch (XmlPullParserException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+
+
+	public ArrayList<String> PrepareListFromXml(String val, int xml) {
 		ArrayList<String> itemname = new ArrayList<String>();
 		
 		XmlResourceParser todolistXml = getResources().getXml(xml);

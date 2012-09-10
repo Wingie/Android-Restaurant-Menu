@@ -3,12 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:gravity="center">
-    
+    >
+  <ImageView 
+   android:id="@+id/test_image"
+   android:src="@drawable/koala"
+   android:layout_width="fill_parent"
+   android:layout_height="wrap_content"
+   />  
 <Button
         android:id="@+id/fragment_button"
         android:text="@string/text_hoes_here_lol"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
-        android:gravity="center"/>
+       />
 </LinearLayout>

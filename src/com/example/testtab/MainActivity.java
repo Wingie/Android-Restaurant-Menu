@@ -1,13 +1,13 @@
 package com.example.testtab;
 
+import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.Window;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
@@ -53,7 +53,7 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
         mIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                Toast.makeText(MainActivity.this, "Changed to page " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Changed to page " + position, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -67,10 +67,12 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
     }
     
 	@Override
-	public void onItemClick(CharSequence str) {
+	public void onItemClick(XmlResourceParser xmlItem) {
 		// TODO Auto-generated method stub
+		//xmlItem.getAttributeValue(null,"title");
+		//Toast.makeText(MainActivity.this  ,xmlItem.getAttributeValue(null,"title"), Toast.LENGTH_LONG).show();
 		FragmentManager fm = getSupportFragmentManager();
         MainFrag f = (MainFrag)fm.findFragmentById(R.id.right_frag_container);
-		f.updatebutt(str);
+		f.update(xmlItem);
 	}
 }

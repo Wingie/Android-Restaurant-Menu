@@ -12,7 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 class TestFragmentAdapter extends FragmentPagerAdapter {
     protected static final String[] CONTENT = new String[] { "A", "B", "C", "D"};
-
+    protected static final int[] XML = {R.xml.list_a,R.xml.list_b,R.xml.list_a,R.xml.list_b};
     private int mCount = CONTENT.length;
 
     public TestFragmentAdapter(FragmentManager fm) {
@@ -21,7 +21,7 @@ class TestFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return TestFragment.newInstance(CONTENT[position % CONTENT.length],position);
+        return TestFragment.newInstance(CONTENT[position % CONTENT.length],XML[position]);
     }
 
     @Override

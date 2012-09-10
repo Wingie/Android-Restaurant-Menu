@@ -1,37 +1,88 @@
 <!--?xml version="1.0" encoding="utf-8"?-->
-
 <todoitems>
-	<item 
-	    title="Fill up Gasoline" 
+    <item 
+	    id="0"
+	    title="Android Launch!" 
 	    description="" 
-	    price="34"/>
-	<item title="Wash car" description="" 
-	    price="34"/>
-	<item title="Dinner with friends" description="" 
-	    price="34"/>
-	<item title="Watch Movie" description="" 
-	    price="34"/>
-	<item title="Fill up Gasoline" description="" 
-	    price="34"/>
-	<item title="Wash car" description="" price="34"/>
-	<item title="Dinner with friends" description="" 
-	    price="34"/>
-	<item title="Watch Movie" description="" 
-	    price="34"/>
-	<item title="Fill up Gasoline" description="" 
-	    price="34"/>
-	<item title="Wash car" description="" 
-	    price="34"/>
-	<item title="Dinner with friends" description="" 
-	    price="34"/>
-	<item title="Watch Movie" description="" 
-	    price="34"/>
-	<item title="Fill up Gasoline" description="" 
-	    price="34"/>
-	<item title="Wash car" description="" 
-	    price="34"/>
-	<item title="Dinner with friends" description="" 
-	    price="34"/>
-	<item title="Watch Movie" description="" 
-	    price="34"/>
+	    price="34"
+	    pic="test.jpg"/>
+    <item 
+	    id="1"
+	    title=" adb is running normally." 
+	    description="" 
+	    price="34"
+	    pic="koala.jpg"/>
+    <item 
+	    id="2"
+	    title="Performing com.example.testtab." 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+    <item 
+	    id="3"
+	    title="Automatic Target Mo" 
+	    description="" 
+	    price="34"
+	    pic="koala.jpg"/>
+    <item 
+	    id="4"
+	    title=" Starting activity co" 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+    <item 
+	    id="5"
+	    title="464119d5c30173be" 
+	    description="" 
+	    price="34"
+	    pic="koala.jpg"/>
+    <item 
+	    id="6"
+	    title="[android.intent.category.LAUNCHER]" 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+     <item 
+	    id="7"
+	    title="Android Launch!" 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+    <item 
+	    id="8"
+	    title=" adb is running normally." 
+	    description="" 
+	    price="34"
+	    pic="koala.jpg"/>
+    <item 
+	    id="9"
+	    title="Performing com.example.testtab." 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+    <item 
+	    id="10"
+	    title="Automatic Target Mo" 
+	    description="" 
+	    price="34"
+	    pic="koala.jpg"/>
+    <item 
+	    id="11"
+	    title=" Starting activity co" 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+    <item 
+	    id="12"
+	    title="464119d5c30173be" 
+	    description="" 
+	    price="34"
+	    pic="koala.jpg"/>
+    <item 
+	    id="13"
+	    title="[android.intent.category.LAUNCHER]" 
+	    description="" 
+	    price="34"
+	    pic="test.jpg"/>
+	
 </todoitems>
