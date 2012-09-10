@@ -38,7 +38,7 @@
 
 
 <Button
-        android:id="@+id/fragment_button3"
+        android:id="@+id/fragment_button_center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom" 
@@ -51,7 +51,7 @@
 
 <TextView
         android:id="@+id/description"
-        android:text="fdsfdsffdsffdsfdsffdsffdsfdsffdsfdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsffdsfdsffdsf"
+        android:text="Welcome Text here."
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"

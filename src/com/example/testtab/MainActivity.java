@@ -6,8 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
@@ -19,7 +19,8 @@ import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
  *
  */
 public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener {
-    @Override
+
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -66,13 +67,14 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
         });
     }
     static MainFrag f;
+    static DetailFrag d;
 	@Override
 	public void onItemClick(XmlResourceParser xmlItem) {
 		// TODO Auto-generated method stub
 		//xmlItem.getAttributeValue(null,"title");
 		//Toast.makeText(MainActivity.this  ,xmlItem.getAttributeValue(null,"title"), Toast.LENGTH_LONG).show();
-		FragmentManager fm = getSupportFragmentManager();
 		
+		FragmentManager fm = getSupportFragmentManager();
 		//Log.d("XXX",Integer.toString(fm.getBackStackEntryCount()));
 	//	Log.d("XXX",fm.findFragmentById(R.id.right_frag_container).toString());
 		
@@ -85,7 +87,9 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 			//Log.d("XXX",fm.findFragmentById(R.id.right_frag_container).toString());
 		}  
 		
-		
 		f.update(xmlItem);
 	}
+	
+	
+	
 }

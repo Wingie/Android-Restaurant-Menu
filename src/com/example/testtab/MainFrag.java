@@ -4,6 +4,9 @@ package com.example.testtab;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.example.testtab.TestFragment.fragListener;
+
+import android.app.Activity;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -27,38 +30,39 @@ import android.widget.Toast;
  * @author WINDAdmin
  *
  */
-public class MainFrag extends Fragment {
+public class MainFrag extends Fragment  {
 	Button button_add;
 	ImageView imview;
 	TextView tv,tv_descrip;
 	static DetailFrag det_frag = new DetailFrag();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.mainpagefrag, container, false);
 
-        button_add = (Button) view.findViewById(R.id.fragment_button3);
+        button_add = (Button) view.findViewById(R.id.fragment_button_center);
         
         
         imview = (ImageView) view.findViewById(R.id.test_image);
         tv = (TextView) view.findViewById(R.id.title);
         tv_descrip = (TextView) view.findViewById(R.id.description);
         button_add.setOnClickListener(new OnClickListener() {
-        
+        	
+        	/**
+        	 * This function is getting called whenever the button on the right side is called.
+        	 * a new fragment is created and  the xml resource of the currently selected item sent to it..
+        	 */
             @Override
             public void onClick(View v) {
-                
-            		//Log.d("com.example.texttab",Integer.toString(imview.getWidth()));
-                    Toast.makeText(getActivity(),"some string goes here", Toast.LENGTH_LONG).show();
                     FragmentManager fm = getActivity().getSupportFragmentManager();
-                    Fragment fragment = fm.findFragmentById(R.id.right_frag_container); 
-                    Log.d("com.example.testtab",fragment.toString());
-                   
                     FragmentTransaction ft = fm.beginTransaction();
                     ft.replace(R.id.right_frag_container, det_frag);
+                    if(item!=null)
+                    	det_frag.sendmsg(item);
                     ft.addToBackStack(null);
                     ft.commit(); 
-
+                    
             }
             
         });
@@ -67,15 +71,19 @@ public class MainFrag extends Fragment {
         
         return view;
     }
-
+    //public XmlResourceParser xItem;
+    public BaseItem item=null;
     public void update(XmlResourceParser xmlItem)
     {
     	//Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     	//imview.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fadeout));
+    	
     	String s = xmlItem.getAttributeValue(null,"pic");
     	String t = xmlItem.getAttributeValue(null,"title");
     	String d = xmlItem.getAttributeValue(null,"description");
+    	item = new BaseItem(s,t,d);
     	loadDataFromAsset(s);
+    	
     	tv.setText(t);
     	tv_descrip.setText(d);
     	//button.setText(s);

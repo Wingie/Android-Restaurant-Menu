@@ -27,7 +27,7 @@ public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
     static TextView tv;
     fragListener mCallback;
-
+    
  // Container Activity must implement this interface
     public interface fragListener {
         public void onItemClick(XmlResourceParser abc);
