@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.testtab.TestFragment.fragListener;
+
+import android.app.Activity;
+import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,11 +16,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -42,6 +46,24 @@ public class DetailFrag extends Fragment {
 	public int n=0;
 	public String strng="default";
 	private SimpleAdapter arrayAdapter;
+	List<Map<String, String>> items;
+	delListener mCallback;
+    
+	 // Container Activity must implement this interface
+	    public interface delListener {
+	        public void onDelClick(int i);
+	    }
+	    
+	    @Override
+	    public void onAttach(Activity activity) {
+	        super.onAttach(activity);
+	        try {
+	            mCallback = (delListener) activity;
+	        } catch (ClassCastException e) {
+	            throw new ClassCastException(activity.toString()
+	                    + " must implement OnHeadlineSelectedListener");
+	        }
+	    }
 	
 	public DetailFrag()
 	{
@@ -70,7 +92,7 @@ public class DetailFrag extends Fragment {
         
         String[] from = new String[] { "str" , "price"};
     	int[] to = new int[] { R.id.textp1,R.id.textp2 };
-    	List<Map<String, String>> items =  new ArrayList<Map<String, String>>();
+    	items =  new ArrayList<Map<String, String>>();
 
     	for ( int i = 0; i < arr1.length; i++ )
     	{
@@ -86,7 +108,7 @@ public class DetailFrag extends Fragment {
 
         lv.setAdapter(arrayAdapter);
         
-       Button imv =(Button) view.findViewById(R.id.butt01);
+       //Button imv =(Button) view.findViewById(R.id.butt01);
       
        lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -95,6 +117,19 @@ public class DetailFrag extends Fragment {
             	Toast.makeText(getActivity(), tv_l.getText(), Toast.LENGTH_SHORT).show();
                 }
               });
+       
+       lv.setLongClickable(true);
+       lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+    	    @Override
+    	    public boolean onItemLongClick(AdapterView<?> av, View v, int pos, long id) {
+    	    //	Toast.makeText(getActivity(), Integer.toString(pos), Toast.LENGTH_SHORT).show();
+    	    	items.remove(pos);
+    	    	arrayAdapter.notifyDataSetChanged();
+    	    	mCallback.onDelClick(pos);
+    	        return true;
+    	    }
+    	});
+
         
         button_back.setOnClickListener(new OnClickListener() {
         

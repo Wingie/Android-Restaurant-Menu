@@ -8,8 +8,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-
 import android.view.Window;
+import android.widget.Toast;
 
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
@@ -20,7 +20,7 @@ import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
  * @author WINDAdmin
  *
  */
-public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener,MainFrag.callListener {
+public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener,MainFrag.callListener,DetailFrag.delListener {
 	FragmentManager fm;
 	Fragment fragment;
 	ArrayList<BaseItem> myitemlist = new ArrayList<BaseItem>();
@@ -110,6 +110,16 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 		ft.replace(R.id.right_frag_container, new DetailFrag(myitemlist));
 		ft.addToBackStack(null);
 		ft.commit();
+	}
+
+	/**
+	 * This interface is coming from the delete fragment and is supposed to handle the deletion of the listiew i
+	 */
+	@Override
+	public void onDelClick(int i) {
+		// TODO Auto-generated method stub
+		//Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
+		myitemlist.remove(i);
 	}
 	
 	
