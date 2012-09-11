@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+
 import android.view.Window;
 
 import com.viewpagerindicator.TitlePageIndicator;
@@ -72,8 +72,13 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
             }
         });
     }
-    static MainFrag f;
-    static DetailFrag d;
+	
+	/***
+	 * This click is a receiver for an implementation in the left_PAGER.
+	 * it receives a nice XML item that works properly.
+	 * everything is cool.
+	 */
+	MainFrag f;
 	@Override
 	public void onItemClick(XmlResourceParser xmlItem) {
 		FragmentManager fm = getSupportFragmentManager();
@@ -88,7 +93,13 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 		f.update(xmlItem);
 	}
 	
-	
+	/**
+	 * This interface is a fuckhead that switches the right fragment activity with the details fragment.
+	 * fucking acts like a dickhead and wont work nicely with the XMLparser
+	 * so because im lazy (stfu), halfway through i created (for lack of a fucking better name) a baseitem class
+	 * to handle the fucking menudata that this fucking SDK required me to fucking bob around like a fucking basketball..
+	 * fuck javadoc sucks. 
+	 */
 	@Override
 	public void onButtonClick(BaseItem item) {
 		// TODO Auto-generated method stub

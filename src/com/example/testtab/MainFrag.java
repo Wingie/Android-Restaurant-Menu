@@ -4,16 +4,13 @@ package com.example.testtab;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.example.testtab.TestFragment.fragListener;
 
 import android.app.Activity;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,7 +19,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 /**
  * This fragment is for the RightSideBar.
@@ -99,7 +96,8 @@ public class MainFrag extends Fragment  {
     	String s = xmlItem.getAttributeValue(null,"pic");
     	String t = xmlItem.getAttributeValue(null,"title");
     	String d = xmlItem.getAttributeValue(null,"description");
-    	item = new BaseItem(s,t,d);
+    	String p = xmlItem.getAttributeValue(null,"price");
+    	item = new BaseItem(s,t,d,p);
     	loadDataFromAsset(s);
     	
     	tv.setText(t);

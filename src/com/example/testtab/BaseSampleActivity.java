@@ -10,6 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+/**
+ * This basesampleactivity was a base fragment class for the left side slider module.
+ * @author WINDAdmin
+ *
+ */
 public abstract class BaseSampleActivity extends FragmentActivity {
     private static final Random RANDOM = new Random();
 
@@ -28,7 +33,7 @@ public abstract class BaseSampleActivity extends FragmentActivity {
         switch (item.getItemId()) {
             case R.id.random:
                 final int page = RANDOM.nextInt(mAdapter.getCount());
-                Toast.makeText(this, "Changing to page " + page, Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Changing to page " + page, Toast.LENGTH_SHORT).show();
                 mPager.setCurrentItem(page);
                 return true;
 

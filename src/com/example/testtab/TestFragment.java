@@ -22,7 +22,13 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-
+/**
+ * the LEFT side panel implementation.
+ * reads an XML file and quietly does some shit.
+ * yeah!
+ * @author WINDAdmin
+ *
+ */
 public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
     static TextView tv;
