@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <Button
         android:id="@+id/button1"
@@ -13,9 +13,17 @@
     <ListView
         android:id="@+id/listview1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-        
+        android:layout_height="wrap_content" >
     </ListView>
-    
+	<View android:layout_width="wrap_content"
+        android:background="@drawable/grad_line"
+        android:layout_height="1dp"></View>
+    <TextView
+        android:id="@+id/final_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dsd"
+        android:layout_gravity="center"
+        android:textSize="25dp"
+         />
 </LinearLayout>

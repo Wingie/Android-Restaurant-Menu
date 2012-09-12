@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.Window;
-import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
@@ -20,7 +20,10 @@ import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
  * @author WINDAdmin
  *
  */
-public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener,MainFrag.callListener,DetailFrag.delListener {
+public class MainActivity extends BaseSampleActivity implements TestFragment.fragListener,
+																MainFrag.callListener,
+																DetailFrag.delListener,
+																DetailFrag.numListener{
 	FragmentManager fm;
 	Fragment fragment;
 	ArrayList<BaseItem> myitemlist = new ArrayList<BaseItem>();
@@ -120,6 +123,15 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 		// TODO Auto-generated method stub
 		//Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
 		myitemlist.remove(i);
+	}
+
+	@Override
+	public void onNumChange(int i,int p) {
+		// TODO Auto-generated method stub
+		//Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
+		BaseItem bit = myitemlist.get(p);
+		bit.num=i;
+		myitemlist.set(p, bit);
 	}
 	
 	

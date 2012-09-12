@@ -12,19 +12,18 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -48,10 +47,16 @@ public class DetailFrag extends Fragment {
 	private SimpleAdapter arrayAdapter;
 	List<Map<String, String>> items;
 	delListener mCallback;
-    
-	 // Container Activity must implement this interface
+	numListener numCallback;
+	 // Container Activity must implement these interfaces
+		// this listener is to inform the parent activity that an item has been deleted from the menu
 	    public interface delListener {
 	        public void onDelClick(int i);
+	    }
+	    
+		// this listener is to inform the parent activity that an item's number 
+	    public interface numListener {
+	        public void onNumChange(int i,int p);
 	    }
 	    
 	    @Override
@@ -59,12 +64,14 @@ public class DetailFrag extends Fragment {
 	        super.onAttach(activity);
 	        try {
 	            mCallback = (delListener) activity;
+	            numCallback = (numListener) activity;
 	        } catch (ClassCastException e) {
 	            throw new ClassCastException(activity.toString()
-	                    + " must implement OnHeadlineSelectedListener");
+	                    + " must implement Listeners!!");
 	        }
 	    }
 	
+	    // 2 constructsors 
 	public DetailFrag()
 	{
 		
@@ -75,23 +82,24 @@ public class DetailFrag extends Fragment {
 		myitemlist=s;
 	}
 	
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		// first prepare the list view to accept the items
         View view = inflater.inflate(R.layout.detail, container, false);
         button_back =(Button) view.findViewById(R.id.button1);
         lv = (ListView)view.findViewById(R.id.listview1);
         
-     //   cb.setText(myitemlist.get(0).title);
-        String[] arr1 = new String[myitemlist.size()];//myitemlist.toArray(new String[0]);
+        String[] arr1 = new String[myitemlist.size()];
         String[] arr2 = new String[myitemlist.size()];
+        String[] arr3 = new String[myitemlist.size()];
         for(int i=0;i<myitemlist.size();i++)
         {	
-        	Log.d("XXX",Integer.toString(i)+myitemlist.get(i).title);
         	arr1[i]=myitemlist.get(i).title;
         	arr2[i]=myitemlist.get(i).price;
+        	arr3[i]="x "+Integer.toString(myitemlist.get(i).num);
         }
         
-        String[] from = new String[] { "str" , "price"};
-    	int[] to = new int[] { R.id.textp1,R.id.textp2 };
+        String[] from = new String[] { "str" , "price","numbs"};
+    	int[] to = new int[] { R.id.textp1,R.id.textp2,R.id.textp3};
     	items =  new ArrayList<Map<String, String>>();
 
     	for ( int i = 0; i < arr1.length; i++ )
@@ -99,27 +107,22 @@ public class DetailFrag extends Fragment {
     	    Map<String, String> map = new HashMap<String, String>();
     	    map.put( "str", String.format( "%s", arr1[i] ) );
     	    map.put( "price", String.format( "%s", arr2[i] ) );
+    	    map.put("numbs", String.format( "%s", arr3[i] ));
     	    items.add( map );
     	}
     	
-    	
-//      /  arrayAdapter = new ArrayAdapter<Object>(getActivity(), android.R.layout.simple_list_item_1, arr2);
     	arrayAdapter = new SimpleAdapter( getActivity(), items,R.layout.menulist, from, to );
 
         lv.setAdapter(arrayAdapter);
-        
-       //Button imv =(Button) view.findViewById(R.id.butt01);
-      
+       
+        // this is the single click listener.. :D inside it lies 
        lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
-            	//TextView tv_l = (TextView)view.findViewById(R.id.textp1);
-            	//Toast.makeText(getActivity(), tv_l.getText(), Toast.LENGTH_SHORT).show();
-            	
+                    final int position, long id) {
             	Context mContext = getActivity();
             	LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
             	View layout = inflater.inflate(R.layout.dialog,(ViewGroup) view.findViewById(R.id.layout_root));
-            	NumberPicker np = (NumberPicker) layout.findViewById(R.id.numberPicker1);
+            	final NumberPicker np = (NumberPicker) layout.findViewById(R.id.numberPicker1);
                 np.setMaxValue(10);
                 np.setMinValue(0);
                 np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
@@ -130,10 +133,16 @@ public class DetailFrag extends Fragment {
             	//builder.setIcon(R.drawable.dialog_question);
             	builder.setTitle("Change Number of items.");
             	builder.setInverseBackgroundForced(true);
+            	// this is the dialog element that implements the changing number shz
             	builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
             	  @Override
             	  public void onClick(DialogInterface dialog, int which) {
-            	    dialog.dismiss();
+            		  
+            		  numCallback.onNumChange(np.getValue(),position);
+            		   Map<String, String> mss = items.get(position);
+            		  mss.put("numbs", String.format( "x %s", Integer.toString(np.getValue()) ));
+            		  items.set(position, mss);
+            		  arrayAdapter.notifyDataSetChanged();
             	  }
             	});
             	
@@ -144,6 +153,7 @@ public class DetailFrag extends Fragment {
                 }
               });
        
+       // long click to delete code
        lv.setLongClickable(true);
        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
     	    @Override
@@ -156,7 +166,7 @@ public class DetailFrag extends Fragment {
     	    }
     	});
 
-        
+        // GTF back
         button_back.setOnClickListener(new OnClickListener() {
         
             @Override
@@ -167,6 +177,14 @@ public class DetailFrag extends Fragment {
             
         });
         
+        setbill(view);
         return view;
+	}
+	
+	public void setbill(View view)
+	{
+		TextView child = (TextView)view.findViewById(R.id.final_bill);
+        child.setText("fd");
+		
 	}
 }
