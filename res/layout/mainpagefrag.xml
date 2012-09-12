@@ -44,7 +44,11 @@
         android:layout_gravity="bottom" 
         android:textSize="18dp"
         android:text="@string/add_to_my_menu_"
-       
+       	android:background="@drawable/butt_purple"
+        android:shadowRadius="10"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="1"
+		android:shadowDy="1"
         
        />
 

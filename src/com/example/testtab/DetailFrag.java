@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,7 +24,6 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 /**
@@ -84,7 +84,7 @@ public class DetailFrag extends Fragment {
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// first prepare the list view to accept the items
-        View view = inflater.inflate(R.layout.detail, container, false);
+        final View view = inflater.inflate(R.layout.detail, container, false);
         button_back =(Button) view.findViewById(R.id.button1);
         lv = (ListView)view.findViewById(R.id.listview1);
         
@@ -117,11 +117,11 @@ public class DetailFrag extends Fragment {
        
         // this is the single click listener.. :D inside it lies 
        lv.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
+            public void onItemClick(AdapterView<?> parent, View mview,
                     final int position, long id) {
             	Context mContext = getActivity();
             	LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
-            	View layout = inflater.inflate(R.layout.dialog,(ViewGroup) view.findViewById(R.id.layout_root));
+            	View layout = inflater.inflate(R.layout.dialog,(ViewGroup) mview.findViewById(R.id.layout_root));
             	final NumberPicker np = (NumberPicker) layout.findViewById(R.id.numberPicker1);
                 np.setMaxValue(10);
                 np.setMinValue(0);
@@ -143,6 +143,7 @@ public class DetailFrag extends Fragment {
             		  mss.put("numbs", String.format( "x %s", Integer.toString(np.getValue()) ));
             		  items.set(position, mss);
             		  arrayAdapter.notifyDataSetChanged();
+            		  setbill(view);
             	  }
             	});
             	
@@ -183,8 +184,18 @@ public class DetailFrag extends Fragment {
 	
 	public void setbill(View view)
 	{
-		TextView child = (TextView)view.findViewById(R.id.final_bill);
-        child.setText("fd");
-		
+		TextView child = (TextView)view.findViewById(R.id.bill_amount);
+//        /Log.d();
+        int sum = 0;
+        for(int i=0;i<myitemlist.size();i++)
+        {
+        	int p = Integer.parseInt(myitemlist.get(i).price);
+        	sum+= myitemlist.get(i).num*p;
+        }
+        if(child!=null){
+        	child.setText(Integer.toString(sum));
+        	Log.d("XXX","fdfdffdfdfdf");
+        }
+        	
 	}
 }
