@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -93,7 +94,8 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 			fm.executePendingTransactions();
 		}  
 		
-		f.update(xmlItem);
+		if(f!=null && xmlItem!=null)
+			f.update(xmlItem);
 	}
 	
 	/**
@@ -106,7 +108,8 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 	@Override
 	public void onButtonClick(BaseItem item) {
 		// TODO Auto-generated method stub
-		myitemlist.add(item);
+		if(item!=null)
+			myitemlist.add(item);
 		
 	//	Log.d("XXX",item.title);
 		FragmentTransaction ft = fm.beginTransaction();
@@ -122,7 +125,8 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 	public void onDelClick(int i) {
 		// TODO Auto-generated method stub
 		//Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
-		myitemlist.remove(i);
+		Log.d("XXX", Integer.toString(i)+""+Integer.toString(myitemlist.size()));
+			//myitemlist.remove(i-1);
 	}
 
 	@Override

@@ -28,12 +28,13 @@ import android.widget.TextView;
  *
  */
 public class MainFrag extends Fragment  {
-	Button button_add;
-	ImageView imview;
-	TextView tv,tv_descrip;
+	private Button button_add;
+	private ImageView imview;
+	private TextView tv,tv_descrip;
 	//DetailFrag det_frag = new DetailFrag();
 	
-	callListener mCallback;
+	private callListener mCallback;
+	private Button button_view;
     
 	 // Container Activity must implement this interface
 	    public interface callListener {
@@ -57,7 +58,7 @@ public class MainFrag extends Fragment  {
         View view = inflater.inflate(R.layout.mainpagefrag, container, false);
 
         button_add = (Button) view.findViewById(R.id.fragment_button_center);
-        
+        button_view = (Button) view.findViewById(R.id.fragment_button_left);
         
         imview = (ImageView) view.findViewById(R.id.test_image);
         tv = (TextView) view.findViewById(R.id.title);
@@ -82,7 +83,14 @@ public class MainFrag extends Fragment  {
             
         });
         
-        
+        button_view.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            		mCallback.onButtonClick(null);
+                    
+            }
+            
+        });
         
         return view;
     }

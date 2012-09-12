@@ -6,6 +6,6 @@
     <string name="title_activity_main">Da Activityy!</string>
     <string name="text_hoes_here_lol">Text hoes here lol</string>
     <string name="menu_display_image">menu display image</string>
-    <string name="add_to_my_menu_">Click here to see Order.</string>
+    <string name="add_to_my_menu_">Add this Item to Order.</string>
 
 </resources>

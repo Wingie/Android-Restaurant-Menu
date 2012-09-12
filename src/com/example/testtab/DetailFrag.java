@@ -139,7 +139,7 @@ public class DetailFrag extends Fragment {
             	  public void onClick(DialogInterface dialog, int which) {
             		  
             		  numCallback.onNumChange(np.getValue(),position);
-            		   Map<String, String> mss = items.get(position);
+            		  Map<String, String> mss = items.get(position);
             		  mss.put("numbs", String.format( "x %s", Integer.toString(np.getValue()) ));
             		  items.set(position, mss);
             		  arrayAdapter.notifyDataSetChanged();
@@ -161,7 +161,9 @@ public class DetailFrag extends Fragment {
     	    public boolean onItemLongClick(AdapterView<?> av, View v, int pos, long id) {
     	    //	Toast.makeText(getActivity(), Integer.toString(pos), Toast.LENGTH_SHORT).show();
     	    	items.remove(pos);
+    	    	myitemlist.remove(pos);
     	    	arrayAdapter.notifyDataSetChanged();
+    	    	setbill(view);
     	    	mCallback.onDelClick(pos);
     	        return true;
     	    }

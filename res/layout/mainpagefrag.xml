@@ -36,12 +36,15 @@
 
 </FrameLayout>
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 <Button
         android:id="@+id/fragment_button_center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom" 
+        android:layout_gravity="top" 
         android:textSize="18dp"
         android:text="@string/add_to_my_menu_"
        	android:background="@drawable/butt_purple"
@@ -49,17 +52,31 @@
         android:shadowColor="@android:color/white"
         android:shadowDx="1"
 		android:shadowDy="1"
-        
+		android:layout_weight="50"
        />
-
+<Button
+        android:id="@+id/fragment_button_left"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" 
+        android:textSize="18dp"
+        android:text="View Order State"
+       	android:background="@drawable/butt_other"
+        android:shadowRadius="10"
+        android:shadowColor="@android:color/white"
+        android:shadowDx="1"
+		android:shadowDy="1"
+		android:layout_weight="50"
+       />
+</LinearLayout>
 
 <TextView
         android:id="@+id/description"
-        android:text="Welcome Text here."
+        android:text="dsdsdsdsd\ndsdsdsdsd\n."
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textSize="20dp"
-
+		android:layout_gravity="top" 
        />
 </LinearLayout>
