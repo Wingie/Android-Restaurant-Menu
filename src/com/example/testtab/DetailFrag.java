@@ -5,31 +5,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.example.testtab.TestFragment.fragListener;
-
 import android.app.Activity;
-import android.content.res.XmlResourceParser;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.NumberPicker;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 /**
  * 
- * so basically his class is for the second page or the listing of all selected items for the user
+ * so basically this class is for the second page or the listing of all selected items for the user
  * thought i could keep an instance of this fragment statically bound to the parent class 
  * but that was bat shit crazy with some wierd garbagecollector madness and some nullpointer exceptions that were not cool
  * so a fucking asshole of an implementation was done, as to why there is a fucking ArrayList that will be populated everytime
@@ -79,7 +79,7 @@ public class DetailFrag extends Fragment {
         View view = inflater.inflate(R.layout.detail, container, false);
         button_back =(Button) view.findViewById(R.id.button1);
         lv = (ListView)view.findViewById(R.id.listview1);
-     
+        
      //   cb.setText(myitemlist.get(0).title);
         String[] arr1 = new String[myitemlist.size()];//myitemlist.toArray(new String[0]);
         String[] arr2 = new String[myitemlist.size()];
@@ -113,8 +113,34 @@ public class DetailFrag extends Fragment {
        lv.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                     int position, long id) {
-            	TextView tv_l = (TextView)view.findViewById(R.id.textp1);
-            	Toast.makeText(getActivity(), tv_l.getText(), Toast.LENGTH_SHORT).show();
+            	//TextView tv_l = (TextView)view.findViewById(R.id.textp1);
+            	//Toast.makeText(getActivity(), tv_l.getText(), Toast.LENGTH_SHORT).show();
+            	
+            	Context mContext = getActivity();
+            	LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
+            	View layout = inflater.inflate(R.layout.dialog,(ViewGroup) view.findViewById(R.id.layout_root));
+            	NumberPicker np = (NumberPicker) layout.findViewById(R.id.numberPicker1);
+                np.setMaxValue(10);
+                np.setMinValue(0);
+                np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+                
+            	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setView(layout);
+            	builder.setCancelable(true);
+            	//builder.setIcon(R.drawable.dialog_question);
+            	builder.setTitle("Change Number of items.");
+            	builder.setInverseBackgroundForced(true);
+            	builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+            	  @Override
+            	  public void onClick(DialogInterface dialog, int which) {
+            	    dialog.dismiss();
+            	  }
+            	});
+            	
+            	AlertDialog alert = builder.create();
+            	alert.show();
+
+            	
                 }
               });
        

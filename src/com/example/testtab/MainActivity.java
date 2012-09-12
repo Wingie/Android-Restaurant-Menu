@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.Window;
-import android.widget.Toast;
+import android.view.WindowManager;
 
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
@@ -32,7 +32,7 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
         setRequestedOrientation(0);
         setContentView(R.layout.main_activity);
         
-        
+	       
         // this gets the swiping menu fragment set up and running
         mAdapter = new TestTitleFragmentAdapter(getSupportFragmentManager());
         mPager = (ViewPager)findViewById(R.id.pager);
