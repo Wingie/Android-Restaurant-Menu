@@ -1,0 +1,76 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<todoitems>
+    <item 
+	    id="0"
+	    title="Deluxe Sandwich" 
+	    description="2 pieces of fresh bread with slices of the finest chicken roasted with awesome oil between them.\n Eat it to experience it!" 
+	    price="220"
+	    pic="pic07.png"/>
+    <item 
+	    id="1"
+	    title="Pepperoni Pizza" 
+	    description="An Italian Delight for the palate to enjoy. Feshly baked in a traditional oven, this is something you dont want to miss." 
+	    price="132"
+	    pic="pic08.png"/>
+    <item 
+	    id="2"
+	    title="Chinese Meal" 
+	    description="Rice, Some Balls and Veggies. \n mmm... made in china." 
+	    price="1220"
+	    pic="pic09.png"/>
+    <item 
+	    id="3"
+	    title="Deluxe Sandwich" 
+	    description="2 pieces of fresh bread with slices of the finest chicken roasted with awesome oil between them.\n Eat it to experience it!" 
+	    price="220"
+	    pic="pic07.png"/>
+    <item 
+	    id="4"
+	    title="Pepperoni Pizza" 
+	    description="An Italian Delight for the palate to enjoy. Feshly baked in a traditional oven, this is something you dont want to miss." 
+	    price="132"
+	    pic="pic08.png"/>
+    <item 
+	    id="5"
+	    title="Chinese Meal" 
+	    description="Rice, Some Balls and Veggies. \n mmm... made in china." 
+	    price="1220"
+	    pic="pic09.png"/>
+    <item 
+	    id="6"
+	    title="Deluxe Sandwich" 
+	    description="2 pieces of fresh bread with slices of the finest chicken roasted with awesome oil between them.\n Eat it to experience it!" 
+	    price="220"
+	    pic="pic07.png"/>
+    <item 
+	    id="7"
+	    title="Pepperoni Pizza" 
+	    description="An Italian Delight for the palate to enjoy. Feshly baked in a traditional oven, this is something you dont want to miss." 
+	    price="132"
+	    pic="pic08.png"/>
+    <item 
+	    id="8"
+	    title="Chinese Meal" 
+	    description="Rice, Some Balls and Veggies. \n mmm... made in china." 
+	    price="1220"
+	    pic="pic09.png"/>
+    <item 
+	    id="9"
+	    title="Deluxe Sandwich" 
+	    description="2 pieces of fresh bread with slices of the finest chicken roasted with awesome oil between them.\n Eat it to experience it!" 
+	    price="220"
+	    pic="pic07.png"/>
+    <item 
+	    id="10"
+	    title="Pepperoni Pizza" 
+	    description="An Italian Delight for the palate to enjoy. Feshly baked in a traditional oven, this is something you dont want to miss." 
+	    price="132"
+	    pic="pic08.png"/>
+    <item 
+	    id="11"
+	    title="Chinese Meal" 
+	    description="Rice, Some Balls and Veggies. \n mmm... made in china." 
+	    price="1220"
+	    pic="pic09.png"/>
+
+</todoitems>

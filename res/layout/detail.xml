@@ -45,10 +45,19 @@
         android:id="@+id/final_bill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Final Price : "
+        android:text="Price : "
         android:layout_gravity="center"
         android:textSize="25dp"
         android:layout_toLeftOf="@id/bill_amount"
+         />
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLease Long press on an item to remove it from the menu. \n Touch once on an Item to increase servings."
+        android:layout_gravity="center"
+        android:textSize="12dp"
+        android:layout_toLeftOf="@id/final_bill"
          />
     
 </RelativeLayout>

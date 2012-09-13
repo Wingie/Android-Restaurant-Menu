@@ -2,87 +2,76 @@
 <todoitems>
     <item 
 	    id="0"
-	    title="Android Launch!" 
-	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="34"
-	    pic="test.jpg"/>
+	    title="Crab Cake" 
+	    description="A green surig of coriander on a sumptious slice of crab meat delight." 
+	    price="120"
+	    pic="pic01.png"/>
     <item 
 	    id="1"
-	    title=" adb is running normally." 
-	    description="" 
-	    price="34"
-	    pic="koala.png"/>
+	    title="Chocolate Pancakes" 
+	    description="A rich creamy chocolate delight of thick creamy chocolate sauce on a hot fresh pancake." 
+	    price="200"
+	    pic="pic02.png"/>
     <item 
 	    id="2"
-	    title="Performing com.example.testtab." 
-	    description="" 
+	    title="Steak Sirloin" 
+	    description="A Think rump of meat roasted to perfection and accompanied by an illegal sauce." 
 	    price="34"
-	    pic="test.jpg"/>
-    <item 
+	    pic="pic03.png"/>
+    
+	<item 
 	    id="3"
-	    title="Automatic Target Mo" 
-	    description="" 
-	    price="34"
-	    pic="koala.png"/>
+	    title="Crab Cake" 
+	    description="A green surig of coriander on a sumptious slice of crab meat delight." 
+	    price="120"
+	    pic="pic01.png"/>
     <item 
 	    id="4"
-	    title=" Starting activity co" 
-	    description="" 
-	    price="34"
-	    pic="test.jpg"/>
+	    title="Chocolate Pancakes" 
+	    description="A rich creamy chocolate delight of thick creamy chocolate sauce on a hot fresh pancake." 
+	    price="200"
+	    pic="pic02.png"/>
     <item 
 	    id="5"
-	    title="464119d5c30173be" 
-	    description="" 
+	    title="Steak Sirloin" 
+	    description="A Think rump of meat roasted to perfection and accompanied by an illegal sauce." 
 	    price="34"
-	    pic="koala.png"/>
+	    pic="pic03.png"/>
     <item 
 	    id="6"
-	    title="[android.intent.category.LAUNCHER]" 
-	    description="" 
-	    price="34"
-	    pic="test.jpg"/>
-     <item 
+	    title="Crab Cake" 
+	    description="A green surig of coriander on a sumptious slice of crab meat delight." 
+	    price="120"
+	    pic="pic01.png"/>
+    <item 
 	    id="7"
-	    title="Android Launch!" 
-	    description="" 
-	    price="34"
-	    pic="test.jpg"/>
+	    title="Chocolate Pancakes" 
+	    description="A rich creamy chocolate delight of thick creamy chocolate sauce on a hot fresh pancake." 
+	    price="200"
+	    pic="pic02.png"/>
     <item 
 	    id="8"
-	    title=" adb is running normally." 
-	    description="" 
+	    title="Steak Sirloin" 
+	    description="A Think rump of meat roasted to perfection and accompanied by an illegal sauce." 
 	    price="34"
-	    pic="koala.png"/>
+	    pic="pic03.png"/>
     <item 
 	    id="9"
-	    title="Performing com.example.testtab." 
-	    description="" 
-	    price="34"
-	    pic="test.jpg"/>
+	    title="Crab Cake" 
+	    description="A green surig of coriander on a sumptious slice of crab meat delight." 
+	    price="120"
+	    pic="pic01.png"/>
     <item 
 	    id="10"
-	    title="Automatic Target Mo" 
-	    description="" 
-	    price="34"
-	    pic="koala.png"/>
-    <item 
-	    id="11"
-	    title=" Starting activity co" 
-	    description="" 
-	    price="34"
-	    pic="test.jpg"/>
-    <item 
-	    id="12"
-	    title="464119d5c30173be" 
-	    description="" 
-	    price="34"
-	    pic="koala.png"/>
-    <item 
-	    id="13"
-	    title="[android.intent.category.LAUNCHER]" 
-	    description="" 
-	    price="34"
-	    pic="test.jpg"/>
-	
+	    title="Chocolate Pancakes" 
+	    description="A rich creamy chocolate delight of thick creamy chocolate sauce on a hot fresh pancake." 
+	    price="200"
+	    pic="pic02.png"/>
+    <item
+        id="11"
+        description="A Think rump of meat roasted to perfection and accompanied by an illegal sauce."
+        pic="pic03.png"
+        price="34"
+        title="Steak Sirloin"/>
+
 </todoitems>

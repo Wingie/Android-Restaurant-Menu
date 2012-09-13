@@ -1,11 +1,11 @@
 <resources>
 
-    <string name="app_name">TestTab</string>
+    <string name="app_name">Digital Menu</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">Da Activityy!</string>
-    <string name="text_hoes_here_lol">Text hoes here lol</string>
-    <string name="menu_display_image">menu display image</string>
+    <string name="title_activity_main">Digital Menu</string>
+    <string name="text_hoes_here_lol">Welcome to Delite Restaurant!</string>
+    <string name="menu_display_image">whaddaya want buuub?</string>
     <string name="add_to_my_menu_">Add this Item to Order.</string>
 
 </resources>

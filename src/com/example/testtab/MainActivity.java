@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.viewpagerindicator.TitlePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator.IndicatorStyle;
 /**
- * This is the launcher activity page.
+ * This ish the launcher activity page.
  * we extend BaseSampleActivity which extends FragmentActivity.
  * Base Sample Activity has some code for the menu's only and seems redundant.
  * @author WINDAdmin
@@ -123,16 +123,16 @@ public class MainActivity extends BaseSampleActivity implements TestFragment.fra
 	 */
 	@Override
 	public void onDelClick(int i) {
-		// TODO Auto-generated method stub
-		//Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
-		Log.d("XXX", Integer.toString(i)+""+Integer.toString(myitemlist.size()));
-			//myitemlist.remove(i-1);
+		//Log.d("XXX", Integer.toString(i)+""+Integer.toString(myitemlist.size()));
+		// there was a pop operation over here.. but apparently it wasnt required.. a douple operaition was happening..
+		// god only knows where the actual delete operation is happening and how its surviving fragment swatches
+		// if ever theres an issue with the bloody delete operation later. track from this poin onwards.
+		// myitemlist.remove(i);
 	}
 
 	@Override
 	public void onNumChange(int i,int p) {
-		// TODO Auto-generated method stub
-		//Toast.makeText(MainActivity.this, Integer.toString(i), Toast.LENGTH_SHORT).show();
+
 		BaseItem bit = myitemlist.get(p);
 		bit.num=i;
 		myitemlist.set(p, bit);

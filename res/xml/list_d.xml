@@ -1,0 +1,58 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<todoitems>
+    <item 
+	    id="0"
+	    title="Chocolate Dosa Rolled" 
+	    description="A rolled delight of culinary masterpiece that nations have gone to war for its recipie." 
+	    price="120"
+	    pic="pic10.png"/>
+    <item 
+	    id="1"
+	    title="Allegro Pasta" 
+	    description="A unique blend of a secret sauce as well as traditional pasta cooking techniques handed over from father to son over 20 generations." 
+	    price="110"
+	    pic="pic11.png"/>
+    <item 
+	    id="2"
+	    title="Chocolate Muffin" 
+	    description="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" 
+	    price="276"
+	    pic="pic12.png"/>
+  <item 
+	    id="3"
+	    title="Chocolate Dosa Rolled" 
+	    description="A rolled delight of culinary masterpiece that nations have gone to war for its recipie." 
+	    price="120"
+	    pic="pic10.png"/>
+    <item 
+	    id="4"
+	    title="Allegro Pasta" 
+	    description="A unique blend of a secret sauce as well as traditional pasta cooking techniques handed over from father to son over 20 generations." 
+	    price="110"
+	    pic="pic11.png"/>
+    <item 
+	    id="5"
+	    title="Chocolate Muffin" 
+	    description="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" 
+	    price="276"
+	    pic="pic12.png"/>
+    <item 
+	    id="6"
+	    title="Chocolate Dosa Rolled" 
+	    description="A rolled delight of culinary masterpiece that nations have gone to war for its recipie." 
+	    price="120"
+	    pic="pic10.png"/>
+    <item 
+	    id="7"
+	    title="Allegro Pasta" 
+	    description="A unique blend of a secret sauce as well as traditional pasta cooking techniques handed over from father to son over 20 generations." 
+	    price="110"
+	    pic="pic11.png"/>
+    <item 
+	    id="8"
+	    title="Chocolate Muffin" 
+	    description="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" 
+	    price="276"
+	    pic="pic12.png"/>
+
+</todoitems>

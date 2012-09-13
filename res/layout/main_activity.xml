@@ -23,7 +23,7 @@
         android:textColor="#AA000000"
         app:footerColor="#FFAA2222"
         app:footerLineHeight="4dp"
-        app:footerIndicatorHeight="12dp"
+        app:footerIndicatorHeight="22dp"
         app:footerIndicatorStyle="underline"
         app:selectedColor="#FF000000"
         app:selectedBold="true"

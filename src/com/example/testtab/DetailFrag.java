@@ -95,7 +95,7 @@ public class DetailFrag extends Fragment {
         {	
         	arr1[i]=myitemlist.get(i).title;
         	arr2[i]=myitemlist.get(i).price;
-        	arr3[i]="x "+Integer.toString(myitemlist.get(i).num);
+        	arr3[i]="Qty: "+Integer.toString(myitemlist.get(i).num);
         }
         
         String[] from = new String[] { "str" , "price","numbs"};
@@ -124,7 +124,7 @@ public class DetailFrag extends Fragment {
             	View layout = inflater.inflate(R.layout.dialog,(ViewGroup) mview.findViewById(R.id.layout_root));
             	final NumberPicker np = (NumberPicker) layout.findViewById(R.id.numberPicker1);
                 np.setMaxValue(10);
-                np.setMinValue(0);
+                np.setMinValue(1);
                 np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
                 
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -140,7 +140,7 @@ public class DetailFrag extends Fragment {
             		  
             		  numCallback.onNumChange(np.getValue(),position);
             		  Map<String, String> mss = items.get(position);
-            		  mss.put("numbs", String.format( "x %s", Integer.toString(np.getValue()) ));
+            		  mss.put("numbs", String.format( "Qty: %s", Integer.toString(np.getValue()) ));
             		  items.set(position, mss);
             		  arrayAdapter.notifyDataSetChanged();
             		  setbill(view);

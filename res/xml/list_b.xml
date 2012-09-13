@@ -2,87 +2,77 @@
 <todoitems>
     <item 
 	    id="0"
-	    title="fdfdfdfdfdf Launch!" 
-	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="7567"
-	    pic="test.jpg"/>
+	    title="Chicken Burger" 
+	    description="2 pieces of fresh bread with slices of the finest chicken between them.\n Rs. 600" 
+	    price="600"
+	    pic="pic04.png"/>
     <item 
 	    id="1"
-	    title=" adb is running normally." 
-	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="7567"
-	    pic="koala.png"/>
+	    title="Swizz Ham and Cheese" 
+	    description="Last meal of felons in Switzerland.\n A little more descriptive text comes here to fill space.\n We charge You Rs. 600!" 
+	    price="10"
+	    pic="pic05.png"/>
     <item 
 	    id="2"
-	    title="Performing com.example.testtab." 
-	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="7567"
-	    pic="test.jpg"/>
-    <item 
+	    title="Sea Food Platter" 
+	    description="Freshly caught Prawns, Crabs and other shellfish marinated in a spicy tomato sauce for your rioting taste buds." 
+	    price="1220"
+	    pic="pic06.png"/>
+	<item 
 	    id="3"
-	    title="Automatic Target Mo" 
-	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="7567"
-	    pic="koala.png"/>
+	    title="Chicken Burger" 
+	    description="2 pieces of fresh bread with slices of the finest chicken between them.\n Rs. 600" 
+	    price="600"
+	    pic="pic04.png"/>
     <item 
 	    id="4"
-	    title=" Starting activity co" 
-	    description="blah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="7567"
-	    pic="test.jpg"/>
+	    title="Swizz Ham and Cheese" 
+	    description="Last meal of felons in Switzerland.\n A little more descriptive text comes here to fill space.\n We charge You Rs. 600!" 
+	    price="10"
+	    pic="pic05.png"/>
     <item 
 	    id="5"
-	    title="464119d5c30173be" 
-	    description="vblah blah blah blah \n blah blah blah blablah blah blah bla" 
-	    price="7567"
-	    pic="koala.png"/>
+	    title="Sea Food Platter" 
+	    description="Freshly caught Prawns, Crabs and other shellfish marinated in a spicy tomato sauce for your rioting taste buds." 
+	    price="1220"
+	    pic="pic06.png"/>
+	
     <item 
 	    id="6"
-	    title="[android.intent.category.LAUNCHER]" 
-	    description="" 
-	    price="7567"
-	    pic="test.jpg"/>
-     <item 
+	    title="Chicken Burger" 
+	    description="2 pieces of fresh bread with slices of the finest chicken between them.\n Rs. 600" 
+	    price="600"
+	    pic="pic04.png"/>
+    <item 
 	    id="7"
-	    title="Android Launch!" 
-	    description="" 
-	    price="7567"
-	    pic="test.jpg"/>
+	    title="Swizz Ham and Cheese" 
+	    description="Last meal of felons in Switzerland.\n A little more descriptive text comes here to fill space.\n We charge You Rs. 600!" 
+	    price="10"
+	    pic="pic05.png"/>
     <item 
 	    id="8"
-	    title=" adb is running normally." 
-	    description="" 
-	    price="7567"
-	    pic="koala.png"/>
+	    title="Sea Food Platter" 
+	    description="Freshly caught Prawns, Crabs and other shellfish marinated in a spicy tomato sauce for your rioting taste buds." 
+	    price="1220"
+	    pic="pic07.png"/>
+	
     <item 
 	    id="9"
-	    title="Performing com.example.testtab." 
-	    description="" 
-	    price="7567"
-	    pic="test.jpg"/>
+	    title="Chicken Burger" 
+	    description="2 pieces of fresh bread with slices of the finest chicken between them.\n Rs. 600" 
+	    price="600"
+	    pic="pic04.png"/>
     <item 
 	    id="10"
-	    title="Automatic Target Mo" 
-	    description="" 
-	    price="7567"
-	    pic="koala.png"/>
+	    title="Swizz Ham and Cheese" 
+	    description="Last meal of felons in Switzerland.\n A little more descriptive text comes here to fill space.\n We charge You Rs. 600!" 
+	    price="10"
+	    pic="pic05.png"/>
     <item 
 	    id="11"
-	    title=" Starting activity co" 
-	    description="" 
-	    price="7567"
-	    pic="test.jpg"/>
-    <item 
-	    id="12"
-	    title="464119d5c30173be" 
-	    description="" 
-	    price="7567"
-	    pic="koala.png"/>
-    <item 
-	    id="13"
-	    title="[android.intent.category.LAUNCHER]" 
-	    description="" 
-	    price="7567"
-	    pic="test.jpg"/>
+	    title="Sea Food Platter" 
+	    description="Freshly caught Prawns, Crabs and other shellfish marinated in a spicy tomato sauce for your rioting taste buds." 
+	    price="1220"
+	    pic="pic06.png"/>
 	
 </todoitems>

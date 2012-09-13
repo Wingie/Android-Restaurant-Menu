@@ -11,8 +11,8 @@ import android.support.v4.app.FragmentPagerAdapter;
  *
  */
 class TestFragmentAdapter extends FragmentPagerAdapter {
-    protected static final String[] CONTENT = new String[] { "A", "B", "C", "D"};
-    protected static final int[] XML = {R.xml.list_a,R.xml.list_b,R.xml.list_a,R.xml.list_b};
+    protected static final String[] CONTENT = new String[] { "Starters", "Indian", "Main Course", "Desserts"};
+    protected static final int[] XML = {R.xml.list_a,R.xml.list_b,R.xml.list_c,R.xml.list_d};
     private int mCount = CONTENT.length;
 
     public TestFragmentAdapter(FragmentManager fm) {
