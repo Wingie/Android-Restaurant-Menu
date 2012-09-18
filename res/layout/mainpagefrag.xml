@@ -74,7 +74,7 @@
 
 <TextView
         android:id="@+id/description"
-        android:text=" Welcome to Delight Restauarnt, From a luscious slice of the Cheesecake Factory’s Godiva chocolate cheesecake to a meal of Rainbow and Negihama rolls from Hapa Sushi or our very own Barbeque Chicken Pizza for a crowd, we have it all.\nPlease Take your time to peruse this Digital Menu. Choose an Iten from the left collumn and add to to your order by pressing the blue button."
+        android:text=" Welcome to Demo Restauarnt, From a luscious slice of the Cheesecake Factory’s Godiva chocolate cheesecake to a meal of Rainbow and Negihama rolls from Hapa Sushi or our very own Barbeque Chicken Pizza for a crowd, we have it all.\nPlease Take your time to peruse this Digital Menu. Choose an Iten from the left sidebar and add to to your order by pressing the blue button."
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"

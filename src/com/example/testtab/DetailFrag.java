@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.testtab.ActionItem;
+import com.example.testtab.QuickAction;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -24,6 +27,7 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -39,7 +43,7 @@ import android.widget.TextView;
  *
  */
 public class DetailFrag extends Fragment {
-	public Button button_back;
+	public Button button_back,button_menu;
 	public ListView lv;
 	ArrayList<BaseItem> myitemlist;
 	public int n=0;
@@ -48,6 +52,9 @@ public class DetailFrag extends Fragment {
 	List<Map<String, String>> items;
 	delListener mCallback;
 	numListener numCallback;
+	private static final int ID_UP     = 1;
+	private static final int ID_DOWN   = 2;
+	
 	 // Container Activity must implement these interfaces
 		// this listener is to inform the parent activity that an item has been deleted from the menu
 	    public interface delListener {
@@ -86,6 +93,38 @@ public class DetailFrag extends Fragment {
 		// first prepare the list view to accept the items
         final View view = inflater.inflate(R.layout.detail, container, false);
         button_back =(Button) view.findViewById(R.id.button1);
+        
+        
+        button_menu =(Button) view.findViewById(R.id.button2);
+        ActionItem nextItem 	= new ActionItem(ID_DOWN, "Next", getResources().getDrawable(R.drawable.menu_down_arrow));
+		ActionItem prevItem 	= new ActionItem(ID_UP, "Prev", getResources().getDrawable(R.drawable.menu_up_arrow));
+        
+		prevItem.setSticky(true);
+        nextItem.setSticky(true);
+        final QuickAction quickAction = new QuickAction(getActivity(), QuickAction.VERTICAL);
+		
+		//add action items into QuickAction
+        quickAction.addActionItem(nextItem);
+		quickAction.addActionItem(prevItem);
+        
+		//Set listener for action item clicked
+				quickAction.setOnActionItemClickListener(new QuickAction.OnActionItemClickListener() {			
+					@Override
+					public void onItemClick(QuickAction source, int pos, int actionId) {				
+						ActionItem actionItem = quickAction.getActionItem(pos);
+		                 
+						//here we can filter which action item was clicked with pos or actionId parameter
+						if (actionId == ID_UP) {
+							Toast.makeText(getActivity(), "SOme action can be customized here.", Toast.LENGTH_SHORT).show();
+						} else if (actionId == ID_DOWN) {
+							Toast.makeText(getActivity(), "Clear/Menu/Call Waiter/ anything/..", Toast.LENGTH_SHORT).show();
+						} else {
+							Toast.makeText(getActivity(), actionItem.getTitle() + " selected", Toast.LENGTH_SHORT).show();
+						}
+					}
+				});
+		
+        
         lv = (ListView)view.findViewById(R.id.listview1);
         
         String[] arr1 = new String[myitemlist.size()];
@@ -180,7 +219,19 @@ public class DetailFrag extends Fragment {
             
         });
         
+     // GTF back
+        button_menu.setOnClickListener(new OnClickListener() {
+        
+            @Override
+            public void onClick(View v) {
+            	quickAction.show(v);
+            }
+            
+        });
         setbill(view);
+        
+        
+        
         return view;
 	}
 	
