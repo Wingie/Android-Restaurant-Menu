@@ -6,7 +6,6 @@ but if you are curious,
 
 ##ScreenShots:
 
-![1](https://raw.github.com/Wingie/Android-Restaurant-Menu/experiment/screenshots/pic1.png "t")
 ![2](https://raw.github.com/Wingie/Android-Restaurant-Menu/experiment/screenshots/pic2.png "t")
 ![3](https://raw.github.com/Wingie/Android-Restaurant-Menu/experiment/screenshots/pic3.png "t")
 ![4](https://raw.github.com/Wingie/Android-Restaurant-Menu/experiment/screenshots/pic4.png "t")
