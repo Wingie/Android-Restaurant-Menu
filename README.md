@@ -2,10 +2,10 @@
 
 ##ScreenShots:
 
-![1](experiment/screenshots/pic1.png?raw=true "t")
-![2](experiment/screenshots/pic2.png?raw=true "t")
-![3](experiment/screenshots/pic3.png?raw=true "t")
-![4](experiment/screenshots/pic4.png?raw=true "t")
+![1](https://raw.github.com/Wingie/Android-Restaurant-Menu/experiment/screenshots/pic2.png "t")
+![2](experiment/screenshots/pic2.png "t")
+![3](experiment/screenshots/pic3.png "t")
+![4](experiment/screenshots/pic4.png "t")
 
 
 wingston.sharon@gmail.com
